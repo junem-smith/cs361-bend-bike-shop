@@ -1,4 +1,39 @@
 # Bike
+# Code should be
+# • Transparent   The consequences of change should be obvious in the code that is
+# changing and in distant code that relies upon it
+# • Reasonable   The cost of any change should be proportional to the benefits the
+# change achieves
+# • Usable   Existing code should be usable in new and unexpected contexts
+# • Exemplary   The code itself should encourage those who change it to perpetuate
+# these qualities
+
+
+class Cargo
+  MAX_CARGO_ITEMS = 10
+
+  def initialize(max = MAX_CARGO_ITEMS)
+    @max = max
+    @cargo = []
+  end
+
+  def add(item)
+    @cargo << item
+  end
+
+  def remove(item)
+    @cargo.remove(item)
+  end
+
+  def pannier_capacity
+    @max
+  end
+
+  def pannier_remaining_capacity
+    @max - @cargo.size
+  end
+
+end
 
 
 class Cargo
@@ -46,6 +81,7 @@ class Bike
     self.rented = true
   end
 
+<<<<<<< HEAD
   def add_cargo(item)
     @cargo_contents << item
   end
@@ -62,6 +98,8 @@ class Bike
     @cargo_contents.pannier_remaining_capacity
   end
 
+=======
+>>>>>>> 4c2b1476dfbd49f8a7ceb92b7c34eefbce6a72d1
 end
 
 
